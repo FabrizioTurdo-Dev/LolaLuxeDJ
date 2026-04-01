@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- ============================================================
+       LOLA LUXE — Electronic Press Kit
+       DJ & Productora de Música Electrónica | Buenos Aires
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Primary -->
+  <title>Lola Luxe — DJ & Productora | Techno & Melodic Journey | Buenos Aires</title>
+  <meta name="description"
+    content="Electronic Press Kit oficial de Lola Luxe, DJ y productora de Techno y Melodic House de Monte Grande, Buenos Aires. Sets inmersivos, paisajes melódicos y energía progresiva." />
+  <meta name="keywords"
+    content="Lola Luxe, DJ, Productora, Techno, House, Melodic Techno, Buenos Aires, Monte Grande, Electronic Music, EPK" />
+  <meta name="author" content="Lola Luxe" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lolaluxe.com/" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lolaluxe.com/" />
+  <meta property="og:title" content="Lola Luxe — DJ & Productora | Techno & Melodic Journey" />
+  <meta property="og:description"
+    content="Sets inmersivos, paisajes melódicos y energía progresiva. DJ y productora de Monte Grande, Buenos Aires." />
+  <meta property="og:image" content="assets/img/lolaluxe-hero.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Lola Luxe EPK" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lola Luxe — DJ & Productora | Techno & Melodic Journey" />
+  <meta name="twitter:description" content="Sets inmersivos, paisajes melódicos y energía progresiva." />
+  <meta name="twitter:image" content="assets/img/lolaluxe-hero.jpg" />
+
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
+
+  <!-- Google Fonts: Titles = Bebas Neue | Body = DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="core-reset.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Cursor personalizado -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="site-header" id="siteHeader" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Navegación principal">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Lola Luxe — Inicio">
+        <span class="logo-text" id="logoText">LOLA LUXE</span>
+        <span class="logo-subtitle">DJ &amp; PRODUCTORA</span>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Links -->
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#bio" class="nav-link">Bio</a></li>
+        <li><a href="#music" class="nav-link">Escucha</a></li>
+        <li><a href="#press" class="nav-link">Prensa</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main role="main">
+
+    <!-- ══════════════════════════════════════════════════
+         SECCIÓN 1 — HERO
+         ══════════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Presentación de Lola Luxe">
+
+      <!-- Video loop de fondo (fallback: imagen) -->
+      <div class="hero-bg" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/img/lolaluxe-hero.jpeg"
+          aria-hidden="true">
+          <source src="assets/img/hero-lorop.mp4" type="video/mp4" />
+          <!-- Fallback: si no hay video, se muestra el poster -->
+        </video>
+        <div class="hero-overlay"></div>
+        <!-- Efecto scanlines futurista -->
+        <div class="hero-scanlines" aria-hidden="true"></div>
+      </div>
+
+      <!-- Contenido del Hero -->
+      <div class="hero-content" data-reveal="fade-up">
+        <p class="hero-origin">MONTE GRANDE × BUENOS AIRES</p>
+        <h1 class="hero-title" id="heroTitle">
+          <span class="title-line">LOLA</span>
+          <span class="title-line neon-glow">LUXE</span>
+        </h1>
+        <p class="hero-subtitle">Techno &amp; Melodic Journey</p>
+        <div class="hero-tags" aria-label="Géneros musicales">
+          <span class="tag">Techno</span>
+          <span class="tag">House</span>
+          <span class="tag">Melodic Techno</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary" aria-label="Ir al contacto de WhatsApp">
+            <span class="btn-icon">↓</span>
+            <span>Escribime al WhatsApp</span>
+          </a>
+          <a href="#music" class="btn btn-ghost" aria-label="Ir a la sección de música">
+            <span>Escuchar Sets</span>
+            <span class="btn-icon">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         SECCIÓN 2 — BIO / ABOUT
+         ══════════════════════════════════════════════════ -->
+    <section class="bio" id="bio" aria-labelledby="bio-heading">
+      <div class="section-container">
+
+        <!-- Número decorativo -->
+        <span class="section-number" aria-hidden="true">01</span>
+
+        <div class="bio-grid">
+
+          <!-- Foto -->
+          <div class="bio-image-wrapper" data-reveal="fade-right">
+            <div class="bio-image-frame">
+              <img src="assets/img/lolaluxe-bio.jpeg" alt="Lola Luxe — DJ y Productora de Buenos Aires"
+                class="bio-photo" loading="lazy" width="600" height="750" />
+              <!-- Decoraciones de frame -->
+              <div class="frame-corner frame-corner--tl" aria-hidden="true"></div>
+              <div class="frame-corner frame-corner--br" aria-hidden="true"></div>
+            </div>
+            <!-- Stats flotantes -->
+            <div class="bio-stats" aria-label="Estadísticas de la artista">
+              <div class="stat-card">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Años en escena</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">BCK</span>
+                <span class="stat-label">Lignee CABA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Texto -->
+          <div class="bio-text-wrapper" data-reveal="fade-left">
+            <h2 class="section-heading" id="bio-heading">
+              <span class="heading-eyebrow">Acerca de</span>
+              La Artista
+            </h2>
+
+            <p class="bio-lead">
+              Lola Luxe es una DJ y productora de música electrónica nacida en
+              <strong>Monte Grande, Buenos Aires</strong>, cuya propuesta sonora
+              fusiona la potencia rítmica del Techno con la profundidad emocional
+              del Melodic House.
+            </p>
+
+            <p class="bio-body">
+              Con una formación sólida en la <strong>Academia Arjaus</strong> y la
+              <strong>Academia del Club de la Serpiente</strong>, Lola desarrolló un lenguaje propio:
+              sets inmersivos que construyen paisajes sonoros en constante evolución,
+              guiando al público desde la tensión hasta el clímax con una energía
+              progresiva y calculada.
+            </p>
+
+            <p class="bio-body">
+              Sus presentaciones en la reconocida discoteca <strong>Lignee (CABA)</strong>
+              la consolidaron como una voz emergente del underground porteño.
+              Ha compartido cabina con artistas referentes como <strong>DJ Sgalia</strong>,
+              demostrando versatilidad técnica y una conexión visceral con el dancefloor.
+            </p>
+
+            <p class="bio-body">
+              Para Lola, cada set es un viaje arquitectónico: capas de texturas melódicas
+              sobre grooves profundos que no buscan complacer, sino transformar.
+            </p>
+
+            <!-- Tags de habilidades -->
+            <ul class="bio-skills" aria-label="Habilidades y géneros">
+              <li class="skill-tag">Techno</li>
+              <li class="skill-tag">Melodic House</li>
+              <li class="skill-tag">Live Mixing</li>
+              <li class="skill-tag">Producción</li>
+              <li class="skill-tag">Ableton Live</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         SECCIÓN 3 — MUSIC / ESCUCHA
+         ══════════════════════════════════════════════════ -->
+    <section class="music" id="music" aria-labelledby="music-heading">
+      <div class="section-container">
+
+        <span class="section-number" aria-hidden="true">02</span>
+
+        <div class="section-header" data-reveal="fade-up">
+          <h2 class="section-heading" id="music-heading">
+            <span class="heading-eyebrow">Sets & Tracks</span>
+            La Escucha
+          </h2>
+          <p class="section-desc">
+            Sumérgete en el universo sonoro de Lola Luxe.
+            Techno crudo, melodías hipnóticas, energía progresiva.
+          </p>
+        </div>
+
+        <!-- SoundCloud Embed -->
+        <div class="soundcloud-wrapper" data-reveal="fade-up">
+          <div class="player-label" aria-hidden="true">
+            <span class="player-icon">◈</span> SoundCloud
+          </div>
+          <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2119696845&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+          <div
+            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/carabajal-lorena-m" title="Lola Luxe Dj" target="_blank"
+              style="color: #cccccc; text-decoration: none;">Lola Luxe Dj</a> · <a
+              href="https://soundcloud.com/carabajal-lorena-m/01-alpha-omega" title="01 ALPHA OMEGA" target="_blank"
+              style="color: #cccccc; text-decoration: none;">01 ALPHA OMEGA</a>
+          </div>
+          <p class="soundcloud-fallback">
+            Escucha en SoundCloud:
+            <a href="https://on.soundcloud.com/Z0oMfLm0AHVn3lcYQD" target="_blank" rel="noopener noreferrer"
+              class="link-neon">
+              soundcloud.com/lolaluxe →
+            </a>
+          </p>
+        </div>
+
+        <!-- Video Grid -->
+
+        <!-- No hay contenido en youtube  -->
+
+        <!-- <div class="video-section" data-reveal="fade-up">
+          <h3 class="video-section-heading">
+            <span class="heading-eyebrow">Visuales</span>
+            Sets en Video
+          </h3>
+
+          <div class="video-grid" role="list" aria-label="Videos de YouTube de Lola Luxe">
+
+            <div class="video-card" role="listitem">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=UU&si=lolaluxe"
+                  title="Lola Luxe — Set en vivo (Video 1)" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen loading="lazy" aria-label="Video de YouTube: Set en vivo Lola Luxe">
+                </iframe>
+              </div>
+              <div class="video-info">
+                <span class="video-label">Set en Vivo</span>
+                <a href="https://www.youtube.com/@Lolaluxe-7" target="_blank" rel="noopener noreferrer"
+                  class="link-neon video-yt-link">
+                  @Lolaluxe-7 →
+                </a>
+              </div>
+            </div>
+
+            <div class="video-card" role="listitem">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=UU"
+                  title="Lola Luxe — Mix session (Video 2)" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen loading="lazy" aria-label="Video de YouTube: Mix session Lola Luxe">
+                </iframe>
+              </div>
+              <div class="video-info">
+                <span class="video-label">Mix Session</span>
+                <a href="https://www.youtube.com/@Lolaluxe-7" target="_blank" rel="noopener noreferrer"
+                  class="link-neon video-yt-link">
+                  @Lolaluxe-7 →
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div> -->
+
+      </div>
+    </section>
+
+
+
+    <!-- ══════════════════════════════════════════════════
+         SECCIÓN 5 — CONTACTO / FOOTER
+         ══════════════════════════════════════════════════ -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="section-container">
+
+        <span class="section-number" aria-hidden="true">04</span>
+
+        <div class="contact-grid">
+
+          <!-- Columna Izquierda: Info -->
+          <div class="contact-info" data-reveal="fade-right">
+            <h2 class="section-heading" id="contact-heading">
+              <span class="heading-eyebrow">Bookings &amp; Contacto</span>
+              Hablemos
+            </h2>
+            <p class="contact-desc">
+              Para bookings, colaboraciones, prensa o simplemente para saber más
+              sobre el universo de Lola Luxe.
+            </p>
+
+            <!-- Datos de contacto directos -->
+            <ul class="contact-details" aria-label="Datos de contacto">
+              <li class="contact-item">
+                <span class="contact-label">Email Booking</span>
+                <a href="mailto:booking@lolaluxe.com" class="contact-value link-neon">
+                  Carabajal.lorena.m@gmail.com
+                </a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Email Prensa</span>
+                <a href="mailto:prensa@lolaluxe.com" class="contact-value link-neon">
+                  Carabajal.lorena.m@gmail.com
+                </a>
+              </li>
+              <li class="contact-item">
+                <span class="contact-label">Base</span>
+                <span class="contact-value">Monte Grande, Buenos Aires, AR</span>
+              </li>
+            </ul>
+
+            <!-- Botón WhatsApp -->
+            <a href="https://wa.me/5491159261041?text=Hola%20Lola%20Luxe%2Cvi%20tu%20press%20kit%20me%20gustar%C3%ADa%20coordinar"
+              class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+              <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span>WhatsApp Directo</span>
+            </a>
+
+          </div>
+
+          <!-- Columna Derecha: Redes Sociales -->
+          <div class="contact-social" data-reveal="fade-left">
+
+            <h3 class="social-heading">Seguí a Lola Luxe</h3>
+
+            <ul class="social-list" aria-label="Redes sociales de Lola Luxe">
+
+              <li class="social-item">
+                <a href="https://www.instagram.com/Lola_luxedj" target="_blank" rel="noopener noreferrer"
+                  class="social-link" aria-label="Instagram de Lola Luxe">
+                  <div class="social-icon-wrapper" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                    </svg>
+                  </div>
+                  <div class="social-info">
+                    <span class="social-platform">Instagram</span>
+                    <span class="social-handle">@Lola_luxedj</span>
+                  </div>
+                  <span class="social-arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+
+              <li class="social-item">
+                <a href="https://on.soundcloud.com/Z0oMfLm0AHVn3lcYQD" target="_blank" rel="noopener noreferrer"
+                  class="social-link" aria-label="SoundCloud de Lola Luxe">
+                  <div class="social-icon-wrapper" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M11.56 8.87V17h8.76c.95-.04 1.68-.8 1.68-1.73 0-.95-.74-1.73-1.68-1.73-.08 0-.16.01-.24.02.03-.18.05-.37.05-.56 0-1.96-1.6-3.55-3.57-3.55-.8 0-1.54.26-2.13.7-.15-.83-.87-1.46-1.87-1.28zM0 15.27c0 .95.78 1.73 1.74 1.73S3.48 16.22 3.48 15.27V9.83C3.48 8.87 2.7 8.1 1.74 8.1S0 8.87 0 9.83v5.44zm5.8 1.66c0 .04 0 .07.01.1.13.85.88 1.52 1.8 1.52.92 0 1.67-.66 1.8-1.52V7.46c0-.97-.81-1.75-1.8-1.75-.99 0-1.8.78-1.8 1.75l-.01 9.47z" />
+                    </svg>
+                  </div>
+                  <div class="social-info">
+                    <span class="social-platform">SoundCloud</span>
+                    <span class="social-handle">Lola Luxe</span>
+                  </div>
+                  <span class="social-arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+
+              <li class="social-item">
+                <a href="https://www.youtube.com/@Lolaluxe-7" target="_blank" rel="noopener noreferrer"
+                  class="social-link" aria-label="YouTube de Lola Luxe">
+                  <div class="social-icon-wrapper" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                  </div>
+                  <div class="social-info">
+                    <span class="social-platform">YouTube</span>
+                    <span class="social-handle">@Lolaluxe-7</span>
+                  </div>
+                  <span class="social-arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+
+            </ul>
+
+            <!-- Highlights / Créditos -->
+            <div class="contact-highlights">
+              <p class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">◈</span>
+                Egresada Academia Arjaus
+              </p>
+              <p class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">◈</span>
+                Egresada Academia del Club de la Serpiente
+              </p>
+              <p class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">◈</span>
+                Presentaciones en Lignee CABA
+              </p>
+              <p class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">◈</span>
+                B2B con DJ Sgalia
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <span class="footer-logo-text">LOLA LUXE</span>
+        <span class="footer-logo-sub">DJ &amp; PRODUCTORA</span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> Lola Luxe. Monte Grande, Buenos Aires.
+        Todos los derechos reservados.
+      </p>
+      <p class="footer-credits">
+        <a href="#hero" class="footer-back-top link-neon" aria-label="Volver al inicio">
+          ↑ Back to Top
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts (defer para no bloquear el render) -->
+  <script src="main.js" defer></script>
+</body>
+
+</html>
