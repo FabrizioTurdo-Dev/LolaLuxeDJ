@@ -1348,6 +1348,54 @@ h1, h2, h3, h4 {
   color: var(--accent-pink);
   text-shadow: var(--glow-sm);
 }
+/* --- Estilos para los Créditos del Footer --- */
+.footer-credits {
+  margin-top: var(--space-md);
+  font-size: 0.85rem;
+  color: var(--text-muted); /* Un tono más suave para que no compita */
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Estilo específico para tu nombre (Fabrizio Turdo) */
+.footer-credits .link-neon {
+  color: var(--text-light); /* Empieza en blanco/claro */
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+/* Efecto Hover: Cuando pasan el mouse por tu nombre */
+.footer-credits .link-neon:hover {
+  color: var(--accent-pink); /* Cambia al rosa neón */
+  text-shadow: var(--glow-sm); /* Aplica el brillo que ya tenés definido */
+  transform: translateY(-2px); /* Un pequeño salto sutil */
+}
+
+/* Separación para el botón de "Back to Top" */
+.footer-back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-sm);
+  text-decoration: none;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.footer-back-top:hover {
+  opacity: 1;
+}
+
+/* Ajuste para Mobile */
+@media (max-width: 768px) {
+  .footer-credits {
+    font-size: 0.75rem;
+    padding: 0 1rem;
+  }
+}
 
 @media (max-width: 600px) {
   .footer-container { flex-direction: column; text-align: center; }
