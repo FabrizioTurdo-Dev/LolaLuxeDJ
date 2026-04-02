@@ -740,40 +740,67 @@ h1, h2, h3, h4 {
   border-top: 1px solid var(--border-dim);
   overflow: hidden;
 }
-
+/* --- Ajustes de la Sección Bio --- */
 .bio-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  align-items: start;
-  position: relative;
-  z-index: 1;
+  grid-template-columns: 1fr 1.2fr; /* El texto tiene un poco más de espacio que el video */
+  gap: var(--space-2xl);
+  align-items: center; /* Centra verticalmente el video con el texto */
 }
 
-/* Imagen */
 .bio-image-wrapper {
-  position: relative;
+  max-width: 450px; /* Limitamos el ancho para que no se haga gigante */
+  margin: 0 auto;   /* Lo centra en su columna */
+  width: 100%;
 }
 
-.bio-image-frame {
-  position: relative;
-  overflow: hidden;
+.bio-video.bio-photo {
+  width: 100%;
+  height: auto;     /* Mantiene la proporción */
+  aspect-ratio: 4 / 5; /* Forzamos una proporción de retrato estética */
+  object-fit: cover;
   border-radius: var(--radius-md);
 }
 
-.bio-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  min-height: 500px;
-  filter: grayscale(20%) contrast(1.05);
-  transition: filter var(--transition-slow), transform var(--transition-slow);
+/* --- Ajuste de los Stats --- */
+.bio-stats {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  justify-content: center; /* Centra los cuadritos respecto al video */
 }
 
-.bio-image-frame:hover .bio-photo {
-  filter: grayscale(0%) contrast(1.1);
-  transform: scale(1.02);
+.stat-card {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 992px) {
+  .bio-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: var(--space-xl);
+  }
+
+  .bio-image-wrapper {
+    max-width: 350px; /* Más chico en mobile para que no scrolleen tanto */
+    order: -1; /* Asegura que el video salga antes que el texto */
+  }
+
+  .section-heading {
+    text-align: center;
+  }
+
+  .bio-lead, .bio-body {
+    text-align: center; /* Opcional: centra el texto en mobile si te gusta más */
+  }
+
+  .bio-skills {
+    justify-content: center; /* Centra los tags en mobile */
+  }
 }
 
 /* Esquinas decorativas */
