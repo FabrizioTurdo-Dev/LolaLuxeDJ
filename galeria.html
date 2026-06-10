@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Eventos</title>
+    <link rel="stylesheet" href="galeria.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="header">
+            <h1>Galería de Eventos</h1>
+            <p>Organiza y visualiza tus mejores momentos</p>
+        </div>
+
+        <!-- Galería de imágenes -->
+        <div id="galeria" class="galeria-container">
+            <div class="loading">Cargando imágenes...</div>
+        </div>
+    </div>
+
+    <script>
+        const CLOUD_NAME = "dfrip8drp";
+
+        async function cargarGaleria() {
+            try {
+                // Detectar si es localhost o producción
+                const apiUrl = window.location.hostname === 'localhost' 
+                    ? 'http://localhost:3000/api/imagenes'
+                    : '/api/imagenes';
+
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}`);
+                }
+
+                const data = await response.json();
+                const galeriaDiv = document.getElementById("galeria");
+
+                if (!data.success || !data.resources || data.resources.length === 0) {
+                    galeriaDiv.innerHTML = '<div class="empty">No hay imágenes aún.</div>';
+                    return;
+                }
+
+                // Generar HTML para cada imagen
+                galeriaDiv.innerHTML = data.resources.map(img => `
+                    <div class="galeria-item">
+                        <img src="${img.url}?w=300&h=300&c=fill&q=auto" 
+                             alt="Evento"
+                             loading="lazy">
+                        <div class="galeria-overlay">
+                            <a href="${img.url}" target="_blank" class="btn-ver">Ver Grande</a>
+                        </div>
+                    </div>
+                `).join("");
+
+                console.log(`✅ Galería cargada: ${data.count} imágenes`);
+
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("galeria").innerHTML = `
+                    <div class="error">
+                        <p>Error al cargar las imágenes</p>
+                    </div>
+                `;
+            }
+        }
+
+        cargarGaleria();
+
+        // Recargar cada 30 segundos
+        setInterval(cargarGaleria, 30000);
+    </script>
+</body>
+</html>
