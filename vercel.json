@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/imagenes",
+      "destination": "/api/imagenes"
+    }
+  ]
+}
