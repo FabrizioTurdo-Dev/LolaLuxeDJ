@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Eventos</title>
     <link rel="stylesheet" href="galeria.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Encabezado -->
@@ -22,17 +24,16 @@
     </div>
 
     <script>
-        const CLOUD_NAME = "dfrlp8drp";
 
         async function cargarGaleria() {
             try {
                 // Detectar si es localhost o producción
-                const apiUrl = window.location.hostname === 'localhost' 
+                const apiUrl = window.location.hostname === 'localhost'
                     ? 'http://localhost:3000/api/imagenes'
                     : '/api/imagenes';
 
                 const response = await fetch(apiUrl);
-                
+
                 if (!response.ok) {
                     throw new Error(`Error ${response.status}`);
                 }
@@ -46,16 +47,24 @@
                 }
 
                 // Generar HTML para cada imagen
-                galeriaDiv.innerHTML = data.resources.map(img => `
-                    <div class="galeria-item">
-                        <img src="${img.url}?w=300&h=300&c=fill&q=auto" 
-                             alt="Evento"
-                             loading="lazy">
-                        <div class="galeria-overlay">
-                            <a href="${img.url}" target="_blank" class="btn-ver">Ver Grande</a>
-                        </div>
-                    </div>
-                `).join("");
+                galeriaDiv.innerHTML = data.resources.map(item => {
+
+                    if (item.resource_type === 'video') {
+                        return `
+            <div class="galeria-item">
+                <video controls preload="metadata">
+                    <source src="${item.url}" type="video/mp4">
+                </video>
+            </div>
+        `;
+                    }
+
+                    return `
+        <div class="galeria-item">
+            <img src="${item.url}" alt="">
+        </div>
+    `;
+            }).join("");
 
                 console.log(`✅ Galería cargada: ${data.count} imágenes`);
 
@@ -75,4 +84,5 @@
         setInterval(cargarGaleria, 30000);
     </script>
 </body>
+
 </html>

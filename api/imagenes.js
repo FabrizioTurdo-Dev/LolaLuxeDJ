@@ -8,20 +8,35 @@ cloudinary.config({
 
 module.exports = async (req, res) => {
   try {
-    const resultado = await cloudinary.api.resources({
+
+    const imagenes = await cloudinary.api.resources({
+      resource_type: 'image',
       type: 'upload',
       max_results: 500,
       direction: 'desc'
     });
 
+    const videos = await cloudinary.api.resources({
+      resource_type: 'video',
+      type: 'upload',
+      max_results: 500,
+      direction: 'desc'
+    });
+
+    const recursos = [
+      ...imagenes.resources,
+      ...videos.resources
+    ];
+
     res.status(200).json({
       success: true,
-      count: resultado.resources.length,
-      resources: resultado.resources.map(img => ({
-        public_id: img.public_id,
-        url: img.secure_url,
-        width: img.width,
-        height: img.height
+      count: recursos.length,
+      resources: recursos.map(item => ({
+        public_id: item.public_id,
+        url: item.secure_url,
+        width: item.width,
+        height: item.height,
+        resource_type: item.resource_type
       }))
     });
 
