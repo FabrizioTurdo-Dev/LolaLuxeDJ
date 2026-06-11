@@ -467,3 +467,33 @@ body::before {
 }
 .nav-link:hover { color: var(--text-light); }
 .nav-link:hover::after { right: 0; }
+
+
+.lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img,
+.lightbox video{
+    max-width:90vw;
+    max-height:90vh;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="galeria.css">
 </head>
 
+
 <body>
     <div class="container">
         <!-- Encabezado -->
@@ -51,20 +52,25 @@
 
                     if (item.resource_type === 'video') {
                         return `
-            <div class="galeria-item">
-                <video controls preload="metadata">
-                    <source src="${item.url}" type="video/mp4">
-                </video>
-            </div>
-        `;
+                        <div class="galeria-item">
+                        <video
+                        preload="metadata"
+                        onclick="abrirMedia('${item.url}','video')">
+                        <source src="${item.url}" type="video/mp4">
+                        </video>
+                        </div>`;
                     }
 
                     return `
         <div class="galeria-item">
-            <img src="${item.url}" alt="">
+            <img
+                src="${item.url}?w=300&h=300&c=fill&q=auto"
+                alt="Evento"
+                loading="lazy"
+                onclick="abrirMedia('${item.url}','image')">
         </div>
     `;
-            }).join("");
+                }).join('');
 
                 console.log(`✅ Galería cargada: ${data.count} imágenes`);
 
@@ -78,11 +84,41 @@
             }
         }
 
+        const lightbox = document.getElementById("lightbox");
+        const lightboxContent = document.getElementById("lightbox-content");
+
+        function abrirMedia(url, tipo) {
+
+            if (tipo === "video") {
+                lightboxContent.innerHTML = `
+            <video controls autoplay>
+                <source src="${url}">
+            </video>
+        `;
+            } else {
+                lightboxContent.innerHTML = `
+            <img src="${url}">
+        `;
+            }
+
+            lightbox.classList.add("active");
+        }
+
+        document.querySelector(".close").addEventListener("click", () => {
+            lightbox.classList.remove("active");
+            lightboxContent.innerHTML = "";
+        });
+
         cargarGaleria();
 
         // Recargar cada 30 segundos
         setInterval(cargarGaleria, 30000);
     </script>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <div id="lightbox-content"></div>
+    </div>
 </body>
 
 </html>
