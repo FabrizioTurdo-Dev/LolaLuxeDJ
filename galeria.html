@@ -23,7 +23,10 @@
             <div class="loading">Cargando imágenes...</div>
         </div>
     </div>
-
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <div id="lightbox-content"></div>
+    </div>
     <script>
 
         async function cargarGaleria() {
@@ -115,10 +118,7 @@
         setInterval(cargarGaleria, 30000);
     </script>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <div id="lightbox-content"></div>
-    </div>
+
 </body>
 
 </html>
