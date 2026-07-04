@@ -8,6 +8,10 @@ cloudinary.config({
 
 module.exports = async (req, res) => {
   try {
+    console.log('🔍 [API] Iniciando consulta a Cloudinary...');
+    console.log('🔍 [API] Cloud name:', process.env.CLOUDINARY_CLOUD_NAME ? 'configurado' : 'NO CONFIGURADO');
+    console.log('🔍 [API] API Key:', process.env.CLOUDINARY_API_KEY ? 'configurado' : 'NO CONFIGURADO');
+    console.log('🔍 [API] API Secret:', process.env.CLOUDINARY_API_SECRET ? 'configurado' : 'NO CONFIGURADO');
 
     const imagenes = await cloudinary.api.resources({
       resource_type: 'image',
@@ -17,6 +21,11 @@ module.exports = async (req, res) => {
       direction: 'desc'
     });
 
+    console.log('🔍 [API] Imágenes encontradas:', imagenes.resources.length);
+    if (imagenes.resources.length > 0) {
+      console.log('🔍 [API] Primera imagen public_id:', imagenes.resources[0].public_id);
+    }
+
     const videos = await cloudinary.api.resources({
       resource_type: 'video',
       type: 'upload',
@@ -25,10 +34,14 @@ module.exports = async (req, res) => {
       direction: 'desc'
     });
 
+    console.log('🔍 [API] Videos encontrados:', videos.resources.length);
+
     const recursos = [
       ...imagenes.resources,
       ...videos.resources
     ];
+
+    console.log('🔍 [API] Total recursos:', recursos.length);
 
     res.status(200).json({
       success: true,
@@ -43,6 +56,8 @@ module.exports = async (req, res) => {
     });
 
   } catch (error) {
+    console.error('❌ [API] Error:', error.message);
+    console.error('❌ [API] Stack:', error.stack);
     res.status(500).json({
       success: false,
       error: error.message
