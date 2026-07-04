@@ -12,6 +12,7 @@ module.exports = async (req, res) => {
     const imagenes = await cloudinary.api.resources({
       resource_type: 'image',
       type: 'upload',
+      prefix: 'lola-galery',
       max_results: 500,
       direction: 'desc'
     });
@@ -19,6 +20,7 @@ module.exports = async (req, res) => {
     const videos = await cloudinary.api.resources({
       resource_type: 'video',
       type: 'upload',
+      prefix: 'lola-galery',
       max_results: 500,
       direction: 'desc'
     });
