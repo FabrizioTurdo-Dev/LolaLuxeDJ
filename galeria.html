@@ -36,20 +36,16 @@
                     ? 'http://localhost:3000/api/imagenes'
                     : '/api/imagenes';
 
-                console.log('🔍 [Frontend] Fetching:', apiUrl);
                 const response = await fetch(apiUrl);
-                console.log('🔍 [Frontend] Status:', response.status);
 
                 if (!response.ok) {
                     throw new Error(`Error ${response.status}`);
                 }
 
                 const data = await response.json();
-                console.log('🔍 [Frontend] Data recibida:', JSON.stringify(data, null, 2));
                 const galeriaDiv = document.getElementById("galeria");
 
                 if (!data.success || !data.resources || data.resources.length === 0) {
-                    console.log('🔍 [Frontend] No hay recursos. data:', data);
                     galeriaDiv.innerHTML = '<div class="empty">No hay imágenes aún.</div>';
                     return;
                 }
@@ -79,10 +75,7 @@
     `;
                 }).join('');
 
-                console.log(`✅ Galería cargada: ${data.count} imágenes`);
-
             } catch (error) {
-                console.error("Error:", error);
                 document.getElementById("galeria").innerHTML = `
                     <div class="error">
                         <p>Error al cargar las imágenes</p>
